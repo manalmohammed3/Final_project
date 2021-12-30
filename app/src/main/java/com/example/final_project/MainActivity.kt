@@ -16,17 +16,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
         val button = findViewById<Button>(R.id.button)
 
         val signInLauncher = registerForActivityResult(FirebaseAuthUIActivityResultContract())
         { res ->
             this.onSignInResult(res)
         }
-
         val providers = arrayListOf(AuthUI.IdpConfig.EmailBuilder().build())
-
         // Create and launch sign-in intent
         val signInIntent = AuthUI.getInstance()
             .createSignInIntentBuilder()
@@ -38,15 +34,12 @@ class MainActivity : AppCompatActivity() {
                  button.text = "SignIn"
 //                var intent =Intent(this,ListFragment::class.java)
 //                startActivity(intent)
-
             }
         } else {
             button.text = "SignOut"
             button.setOnClickListener { AuthUI.getInstance().signOut(this) }
         }
     }
-
-
 
     private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
         val response = result.idpResponse
