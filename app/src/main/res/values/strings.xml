@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Final_project</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="cities">Riyadh</string>
+    <string name="cities2">Jeddah</string>
+    <string name="cities3">Dammam</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="riyadh">Riyadh</string>
 </resources>

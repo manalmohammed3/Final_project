@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.final_project.overview.CityViewModel"/>
+
+        <variable
+            name="overViewDetailFragment"
+            type="com.example.final_project.overview.Overview_detailsFragment"
+
+
+            />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <ImageView
+                android:id="@+id/cityImage"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:adjustViewBounds="true"
+                app:photoUrl="@{viewModel.cityImage}" />
+
+
+            <TextView
+                android:id="@+id/cityDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cityImage"
+                android:layout_marginTop="10dp"
+                android:fontFamily="amita"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="@{viewModel.cityDetail}"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</layout>

@@ -1,21 +1,25 @@
 package com.example.final_project.overview
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+
 import com.example.final_project.CityAdapter
+
 import com.example.final_project.R
+import com.example.final_project.data.CitiesItem
 import com.example.final_project.databinding.FragmentOverviewBinding
+import com.google.firebase.database.*
 
 
 class OverviewFragment : Fragment() {
-
     private val viewModel: CityViewModel by activityViewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        setHasOptionsMenu(true)
-
         }
 
 
@@ -24,10 +28,12 @@ class OverviewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding =FragmentOverviewBinding.inflate(inflater)
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+
+        Toast.makeText(requireContext(), "fraqment ", Toast.LENGTH_SHORT).show()
 //       make the the connection with the adapter
-        binding.photosGrid.adapter = CityAdapter()
+       binding.photosGrid.adapter = CityAdapter()
         return binding.root
     }
 
@@ -36,9 +42,10 @@ class OverviewFragment : Fragment() {
         if (menuItem == null) {return}
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-
-
+    }
 }
 
 

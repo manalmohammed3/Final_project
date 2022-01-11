@@ -6,56 +6,61 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.final_project.data.CitiesItem
 import com.example.final_project.databinding.ItemBinding
-import com.example.final_project.network.ResultsItem
+import com.example.final_project.overview.OverviewFragment
+import com.example.final_project.overview.OverviewFragmentDirections
 
-class CityAdapter :ListAdapter<ResultsItem, CityAdapter.CityPhotosViewHolder>(DiffCallback) {
-    /**
-     * prepare the positions of the views
-     */
+class CityAdapter : ListAdapter<CitiesItem, CityAdapter.CityPhotosViewHolder>(DiffCallback) {
+
+
     class CityPhotosViewHolder(var binding: ItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(cityPhoto: ResultsItem) {
-            binding.item = cityPhoto
+        fun bind(cityImage: CitiesItem) {
+            binding.item = cityImage
             binding.executePendingBindings()
+
+
         }
 
-//        var myImage = binding.myImage
+        var myImage = binding.cityImage
+
     }
 
-    /**
-     * check the new and the old data taken from the API
-     */
-    companion object DiffCallback : DiffUtil.ItemCallback<ResultsItem>() {
-        override fun areItemsTheSame(oldItem: ResultsItem, newItem: ResultsItem): Boolean {
+
+    companion object DiffCallback : DiffUtil.ItemCallback<CitiesItem> (){
+        override fun areItemsTheSame(oldItem: CitiesItem, newItem: CitiesItem): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: ResultsItem, newItem: ResultsItem): Boolean {
+        override fun areContentsTheSame(oldItem: CitiesItem, newItem: CitiesItem): Boolean {
             return oldItem.posterPath == newItem.posterPath
         }
+
+
     }
 
-    /**
-     * on creationg the viewHolder takes the views from the [GridViewItemBinding]
-     */
+
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
-    ): CityPhotosViewHolder {
-        return CityPhotosViewHolder(
+    ): CityAdapter.CityPhotosViewHolder {
+        return CityAdapter.CityPhotosViewHolder(
             ItemBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
 
     /**
-     * binding the list of data to the item view
+     * binding the list  of data to the item view
      */
-    override fun onBindViewHolder(holder: CityPhotosViewHolder, position: Int) {
-        val moviePhoto = getItem(position)
-        holder.bind(moviePhoto)
-//        holder.myImage.setOnClickListener {
-//            val action = OverViewFragmentDirections.actionOverViewFragmentToOverViewDetailFragment(position)
-//            holder.itemView.findNavController().navigate(action)
-//        }
+    override fun onBindViewHolder(holder: CityAdapter.CityPhotosViewHolder, position: Int) {
+        val photo = getItem(position)
+
+        holder.bind(photo)
+        holder.myImage.setOnClickListener {
+            val action = OverviewFragmentDirections.actionOverviewFragmentToOverviewDetailsFragment(position)
+            holder.itemView.findNavController().navigate(action)
+        }
+
+
     }
 }
