@@ -41,10 +41,9 @@ class CityAdapter : ListAdapter<CitiesItem, CityAdapter.CityPhotosViewHolder>(Di
     }
 
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup, viewType: Int
-    ): CityAdapter.CityPhotosViewHolder {
-        return CityAdapter.CityPhotosViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int
+    ): CityPhotosViewHolder {
+        return CityPhotosViewHolder(
             ItemBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
@@ -52,12 +51,12 @@ class CityAdapter : ListAdapter<CitiesItem, CityAdapter.CityPhotosViewHolder>(Di
     /**
      * binding the list  of data to the item view
      */
-    override fun onBindViewHolder(holder: CityAdapter.CityPhotosViewHolder, position: Int) {
-        val photo = getItem(position)
+    override fun onBindViewHolder(holder: CityPhotosViewHolder, position:Int) {
+        val cityImage = getItem(position)
 
-        holder.bind(photo)
+        holder.bind( cityImage)
         holder.myImage.setOnClickListener {
-            val action = OverviewFragmentDirections.actionOverviewFragmentToOverviewDetailsFragment(position)
+            val action = OverviewFragmentDirections.actionOverviewFragmentToOverviewDetailsFragment(cityImage.id!!)
             holder.itemView.findNavController().navigate(action)
         }
 

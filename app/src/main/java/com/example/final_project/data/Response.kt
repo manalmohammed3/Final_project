@@ -13,8 +13,7 @@ data class CitiesItem(
 	@Json(name="cityName")
 	val cityName: String? = null,
 
-	@Json(name="overview")
-	val overview: String? = null,
+
 
 	@Json(name="cityImage")
 	val cityImage: String? = null,

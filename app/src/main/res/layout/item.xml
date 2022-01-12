@@ -55,11 +55,15 @@
                 <TextView
                     android:id="@+id/city_name"
                    android:text="@{item.cityName}"
+                    android:textSize="30sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="2"
+                    android:textColor="@color/purple_200"
                     android:padding="5dp"
+                    android:gravity="center"
+
                     app:layout_constraintTop_toBottomOf="@id/city_image" />
 
                 <!--                    app:layout_constraintStart_toEndtOf="@id/city_image"-->

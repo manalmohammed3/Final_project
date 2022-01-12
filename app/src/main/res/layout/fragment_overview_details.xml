@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:adjustViewBounds="true"
-                app:photoUrl="@{viewModel.cityImage}" />
+                app:photoUrl="@{viewModel.cityDetails.cityImage}" />
 
 
             <TextView
@@ -43,11 +43,21 @@
                 android:fontFamily="amita"
                 android:gravity="center"
                 android:padding="7dp"
-                android:text="@{viewModel.cityDetail}"
-                android:textColor="@color/white"
+                android:text="@{viewModel.cityDetails.information}"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
+            <TextView
+                android:id="@+id/cityDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cityImage"
+                android:layout_marginTop="10dp"
+                android:fontFamily="amita"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="@{viewModel.cityDetails.information}"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

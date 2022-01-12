@@ -26,11 +26,11 @@ class Overview_detailsFragment : Fragment() {
 
 
 
-    private var param: Int = 0 // before start
+    private lateinit var param: String // before start
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param = it.getInt("id")
+            param = it.getString("id")!!
 
         }
     }
@@ -51,8 +51,8 @@ class Overview_detailsFragment : Fragment() {
         binding?.lifecycleOwner = viewLifecycleOwner
         binding?.viewModel = viewModel
         binding?.overViewDetailFragment = this@Overview_detailsFragment
-
-//        viewModel.cityList(param)
+     viewModel.getCitydetail(param)
+        //viewModel.getCityList()
     }
 
 

@@ -17,6 +17,11 @@ var gener = 0
 enum class cityApiStatus { LOADING, ERROR, DONE }
 class CityViewModel : ViewModel() {
 
+    //re
+    private val _cityDetails = MutableLiveData<CitiesItem>()
+    val cityDetails: LiveData<CitiesItem> = _cityDetails
+
+
     private val _status = MutableLiveData<cityApiStatus>()
     val status: LiveData<cityApiStatus> = _status
 
@@ -27,21 +32,23 @@ class CityViewModel : ViewModel() {
 
     val cityImage = MutableLiveData<String>()
 
-     var cityGener: MutableList<List<Int>?> = mutableListOf()
+    var cityGener: MutableList<List<Int>?> = mutableListOf()
 
     private val _cityInfo = MutableLiveData<List<CitiesItem>>()
     val cityInfo: LiveData<List<CitiesItem>?> = _cityInfo
 
     private val _cityList = MutableLiveData<List<CitiesItem?>>()
+    val cityList: LiveData<List<CitiesItem?>> = _cityList
 
-      val cityList: LiveData<List<CitiesItem?>> = _cityList
     init {
         getData()
     }
 
-//     init {
-//     getcityList()
+
+    //     init {
+//     getCityList()
 //   }
+//
     fun getData() {
 
         _status.value = cityApiStatus.LOADING
@@ -60,7 +67,6 @@ class CityViewModel : ViewModel() {
                 }
                 _cityInfo.value = cityList
 
-
                 _status.value = cityApiStatus.DONE
             }
 
@@ -70,17 +76,22 @@ class CityViewModel : ViewModel() {
             }
         })
     }
+
+    fun getCitydetail(id: String) {
+
+        for (city in cityInfo.value!!) {
+
+            if (city.id == id) {
+                _cityDetails.value = city
+                Log.e("TAG", "details: ${ _cityDetails.value}",)
+
+            }
+        }
+    }
 }
 
 
-//    fun getcityList (index: Int) {
-//        val item = _cityInfo.value?.get(index)
-//        cityImage.value = item?.posterPath
-//       // cityTitle.value = item?.originalTitle
-//        cityDetail.value = item?.overview
-//        //cityId.value = item?.id
-//    }
-//    }
+
 
 
 

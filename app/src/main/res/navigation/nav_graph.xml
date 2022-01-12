@@ -23,7 +23,7 @@
             app:destination="@id/overviewFragment" />
         <argument
             android:name="id"
-            app:argType="integer" />
+            app:argType="string" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
