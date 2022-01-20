@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/sort_iscomplate"
+        android:title="@string/Done"
+
+        />
+    <item
+        android:id="@+id/sort_isPast"
+        android:title="@string/past"
+        />
+    <item
+        android:id="@+id/is_coming"
+        android:title="@string/coming"
+        />
+
+    <item
+        android:id="@+id/un_sorted"
+        android:title="@string/Reset"
+        app:showAsAction="never"
+        />
+</menu>

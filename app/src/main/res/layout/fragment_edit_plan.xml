@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.final_project.planmodel.TripViewModel" />
+
+        <variable
+            name="editPlanFragment"
+            type="com.example.final_project.tripplane.EditPlanFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".EditFragment">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="20dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fieldTitle"
+
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/city_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/text_input_edit_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            android:text="@={viewModel.title}"
+                            android:textColor="@color/black" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/icon_done"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="15dp"
+                        app:layout_constraintBottom_toBottomOf="@id/fieldTitle"
+                        app:layout_constraintStart_toEndOf="@id/fieldTitle"
+                        app:layout_constraintTop_toTopOf="@id/fieldTitle" />
+
+                    <ImageView
+                        android:id="@+id/calender"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="20dp"
+                        android:onClick="@{()-> editPlanFragment.dateDialog()}"
+                        app:layout_constraintStart_toStartOf="@id/fieldTitle"
+                        app:layout_constraintTop_toBottomOf="@id/fieldTitle"
+                        app:srcCompat="@drawable/plan_calendar" />
+
+                    <TextView
+                        android:id="@+id/task_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="@{()-> editPlanFragment.dateDialog()}"
+                        android:text="@{@string/due_date(viewModel.dueDate)}"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@id/calender"
+                        app:layout_constraintStart_toEndOf="@id/calender"
+                        app:layout_constraintTop_toTopOf="@id/calender" />
+
+                    <TextView
+                        android:id="@+id/past_coming"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="@string/coming"
+                        android:textColor="#0C75A5"
+                        app:layout_constraintBottom_toBottomOf="@id/task_date"
+                        app:layout_constraintStart_toEndOf="@id/task_date"
+                        app:layout_constraintTop_toTopOf="@id/task_date" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fieldDescription"
+                        style="@style/editBox"
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="40dp"
+                        android:hint="@string/describtion"
+                        android:scrollbars="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/task_date">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/text_input_edit_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textMultiLine"
+                            android:maxLines="8"
+                            android:text="@={viewModel.description}"
+                            android:textColor="@color/black" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <CheckBox
+                        android:id="@+id/complete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:checked="@={viewModel.isComplete}"
+                        android:text="@string/plan_is_done"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fieldDescription" />
+
+                    <Button
+                        android:id="@+id/edit_button"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="60dp"
+                        android:onClick="@{()->editPlanFragment.updateTask() }"
+                        android:text="@string/edit"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toTopOf="@id/creation_date"
+                        app:layout_constraintStart_toEndOf="@id/cancel_button"
+                        app:layout_constraintTop_toBottomOf="@id/fieldDescription" />
+
+                    <Button
+                        android:id="@+id/cancel_button"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="60dp"
+                        android:onClick="@{()->editPlanFragment.backWithOutUpdate() }"
+                        android:text="@string/cancel"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toTopOf="@id/creation_date"
+                        app:layout_constraintStart_toEndOf="@id/edit_button"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fieldDescription" />
+
+                    <ImageView
+                        android:id="@+id/delete_icon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:onClick="@{()-> editPlanFragment.showConfirmDeletionDialog()}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/plan_delete" />
+
+                    <TextView
+                        android:id="@+id/creation_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/creation_date(viewModel.creationDate)}"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

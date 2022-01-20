@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/sort_alpha"
+        android:title="@string/alpha"
+        />
+    <item
+        android:id="@+id/sort_due"
+        android:title="@string/due_date"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/sort_cration"
+        android:title="@string/creation_date"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/un_sorted"
+        android:title="@string/Reset"
+        app:showAsAction="never"
+        />
+
+</menu>

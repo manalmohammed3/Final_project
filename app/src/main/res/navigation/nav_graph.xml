@@ -9,7 +9,10 @@
     <fragment
         android:id="@+id/overviewFragment"
         android:name="com.example.final_project.overview.OverviewFragment"
-        android:label="OverviewFragment" >
+        android:label="cities" >
+        <action
+            android:id="@+id/action_overviewFragment_to_planFragment"
+            app:destination="@id/planFragment" />
         <action
             android:id="@+id/action_overviewFragment_to_overview_detailsFragment"
             app:destination="@id/overview_detailsFragment" />
@@ -17,7 +20,7 @@
     <fragment
         android:id="@+id/overview_detailsFragment"
         android:name="com.example.final_project.overview.Overview_detailsFragment"
-        android:label="Overview_detailsFragment" >
+        android:label="cities information" >
         <action
             android:id="@+id/action_overview_detailsFragment_to_overviewFragment"
             app:destination="@id/overviewFragment" />
@@ -29,6 +32,47 @@
         android:id="@+id/mainActivity"
         android:name="com.example.final_project.MainActivity"
         android:label="MainActivity" />
+    <fragment
+        android:id="@+id/planFragment"
+        android:name="com.example.final_project.tripplane.PlanFragment"
+        android:label="plan your trip" >
+        <action
+            android:id="@+id/action_planFragment_to_addPlanFragment"
+            app:destination="@id/addPlanFragment" />
+        <action
+            android:id="@+id/action_planFragment_to_editPlanFragment"
+            app:destination="@id/editPlanFragment" />
+        <action
+            android:id="@+id/action_planFragment_to_showPlanFragment"
+            app:destination="@id/showPlanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlanFragment"
+        android:name="com.example.final_project.tripplane.AddPlanFragment"
+        android:label="AddPlanFragment" >
+        <action
+            android:id="@+id/action_addPlanFragment_to_planFragment"
+            app:destination="@id/planFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showPlanFragment"
+        android:name="com.example.final_project.tripplane.ShowPlanFragment"
+        android:label="ShowPlanFragment" >
+        <action
+            android:id="@+id/action_showPlanFragment_to_editPlanFragment"
+            app:destination="@id/editPlanFragment" />
+        <action
+            android:id="@+id/action_showPlanFragment_to_planFragment"
+            app:destination="@id/planFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPlanFragment"
+        android:name="com.example.final_project.tripplane.EditPlanFragment"
+        android:label="EditPlanFragment" >
+        <action
+            android:id="@+id/action_editPlanFragment_to_planFragment"
+            app:destination="@id/planFragment" />
+    </fragment>
 
 </navigation>
 

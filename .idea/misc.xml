@@ -7,17 +7,37 @@
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable-v24/ic_connection_error.xml" value="0.26205128205128203" />
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26615384615384613" />
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable-v24/loading_img.xml" value="0.1" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.11851851851851852" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/ic_baseline_playlist_add_check_24.xml" value="0.2546875" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.11851851851851852" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/ic_baseline_sort_24.xml" value="0.2703125" />
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/plan_add.xml" value="0.2390625" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/plan_calendar.xml" value="0.2390625" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/plan_check.xml" value="0.2390625" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/plan_delete.xml" value="0.2390625" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/plan_edit.xml" value="0.2390625" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/plan_filter.xml" value="0.2390625" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/plan_sort.xml" value="0.2390625" />
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/drawable/shape_toolbar.xml" value="0.2" />
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/activity_home.xml" value="0.20885416666666667" />
-        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_add_plan.xml" value="0.2" />
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_city_info.xml" value="0.1359375" />
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_details.xml" value="0.1359375" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_edit_plan.xml" value="0.264" />
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_over_view_details.xml" value="0.264" />
-        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_overview.xml" value="0.1" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_overview.xml" value="0.2" />
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_overview_details.xml" value="0.1" />
-        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_overview_planing.xml" value="0.17889492753623187" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_plan.xml" value="0.1" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/fragment_show_plan.xml" value="0.264" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/item.xml" value="0.2" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/plan_item.xml" value="0.1" />
         <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/layout/toolbar.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/menu/filter_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Mnoly/Downloads/Final_project/app/src/main/res/menu/sort_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

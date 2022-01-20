@@ -23,19 +23,14 @@ class Overview_detailsFragment : Fragment() {
     var binding : FragmentOverviewDetailsBinding? = null
     private val viewModel: CityViewModel by activityViewModels()
 
-
-
-
     private lateinit var param: String // before start
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param = it.getString("id")!!
+            param = it.getString("id").toString()
 
         }
     }
-
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -43,19 +38,15 @@ class Overview_detailsFragment : Fragment() {
         return binding!!.root
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.lifecycleOwner = viewLifecycleOwner
         binding?.viewModel = viewModel
         binding?.overViewDetailFragment = this@Overview_detailsFragment
-     viewModel.getCitydetail(param)
-        //viewModel.getCityList()
+        viewModel.getCitydetail(param)
+
     }
-
-
 
 
     companion object {

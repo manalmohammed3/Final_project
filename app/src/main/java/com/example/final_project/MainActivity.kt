@@ -5,13 +5,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.final_project.data.CitiesItem
@@ -19,10 +16,6 @@ import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
-import kotlinx.android.synthetic.main.fragment_overview_details.*
-
 
 class MainActivity : AppCompatActivity() {
     val cityList: MutableList<CitiesItem?> = mutableListOf()
@@ -40,21 +33,22 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val singIn: Button = findViewById(R.id.button)
+        val signIn: Button = findViewById(R.id.button)
       //  FirebaseAuth.getInstance().signOut()
         if (FirebaseAuth.getInstance().currentUser == null) {
-            singIn.setOnClickListener {
+            signIn.visibility= View.VISIBLE
+            signIn.setOnClickListener {
                 // Choose authentication providers
                 Toast.makeText(this, "btn clicked", Toast.LENGTH_SHORT).show()
                 singInIntent()
 
             }
         } else {
+            signIn.visibility= View.GONE
             Toast.makeText(
                 this,
                 "alrdy logdin ${FirebaseAuth.getInstance().currentUser?.displayName}",

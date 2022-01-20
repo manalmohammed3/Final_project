@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Final_project</string>
+    <string name="city_name">اسم المدينه</string>
+    <string name="describtion">وصف</string>
+    <string name="plan_is_done">الخطه انتهت</string>
+    <string name="Trip_plan">خطة الرحله</string>
+    <string name="past">انتهى</string>
+    <string name="dialog_title">dialog_title</string>
+    <string name="delet_plan">حذف الخطه</string>
+    <string name="confirm">حذف</string>
+    <string name="cancel">الغاء</string>
+    <string name="edit">تعديل</string>
+    <string name="don">انتهى</string>
+    <string name="reset">إعادة تعيين</string>
+    <string name="Reset">إعادة تعيين</string>
+    <string name="Done">أنتهى</string>
+    <string name="alpha">أ-ي</string>
+    <string name="dialog_message">هل انت متأكد؟</string>
+    <string name="coming">آت</string>
+    <string name="add">اضافه</string>
+    <string name="riyadh">الرياض</string>
+    <string name="cities3">الدمام</string>
+    <string name="cities2">جده</string>
+    <string name="cities">الرياض</string>
+    <string name="due_date">خلال</string>
+    <string name="creation_date">بدء date</string>
+
+</resources>

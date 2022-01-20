@@ -17,9 +17,10 @@ var gener = 0
 enum class cityApiStatus { LOADING, ERROR, DONE }
 class CityViewModel : ViewModel() {
 
-    //re
+    //remm.secon.fragment
     private val _cityDetails = MutableLiveData<CitiesItem>()
     val cityDetails: LiveData<CitiesItem> = _cityDetails
+
 
 
     private val _status = MutableLiveData<cityApiStatus>()
@@ -77,10 +78,10 @@ class CityViewModel : ViewModel() {
         })
     }
 
+
+    //reem second fragment
     fun getCitydetail(id: String) {
-
         for (city in cityInfo.value!!) {
-
             if (city.id == id) {
                 _cityDetails.value = city
                 Log.e("TAG", "details: ${ _cityDetails.value}",)

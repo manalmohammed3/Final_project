@@ -1,14 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Final_project</string>
-
-    <string name="cities">Riyadh</string>
-    <string name="cities2">Jeddah</string>
-    <string name="cities3">Dammam</string>
-
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="riyadh">Riyadh</string>
-    <string name="add">add</string>
-    <string name="coming">soon</string>
+    <string name="coming">coming</string>
     <string name="city_name">city name</string>
     <string name="describtion">decribtion</string>
     <string name="plan_is_done">plan is done</string>
@@ -16,7 +8,6 @@
     <string name="past">past</string>
     <string name="dialog_title">dialog_title</string>
     <string name="delet_plan">delet plan</string>
-    <string name="dialog_message">Are you sure you want to delet</string>
     <string name="confirm">delete</string>
     <string name="cancel">cancel</string>
     <string name="edit">edit</string>
@@ -25,7 +16,7 @@
     <string name="Reset">Reset</string>
     <string name="Done">Done</string>
     <string name="alpha">A-Z</string>
-    <string name="due_date">Date of plan</string>
+    <string name="due_date">Dou Date</string>
 
-    <string name="creation_date"></string>
+    <string name="creation_date">creation date</string>
 </resources>

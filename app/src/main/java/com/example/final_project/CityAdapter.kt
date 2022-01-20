@@ -3,6 +3,7 @@ package com.example.final_project
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ import com.example.final_project.data.CitiesItem
 import com.example.final_project.databinding.ItemBinding
 import com.example.final_project.overview.OverviewFragment
 import com.example.final_project.overview.OverviewFragmentDirections
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable
 
 class CityAdapter : ListAdapter<CitiesItem, CityAdapter.CityPhotosViewHolder>(DiffCallback) {
 
@@ -58,6 +60,8 @@ class CityAdapter : ListAdapter<CitiesItem, CityAdapter.CityPhotosViewHolder>(Di
         holder.myImage.setOnClickListener {
             val action = OverviewFragmentDirections.actionOverviewFragmentToOverviewDetailsFragment(cityImage.id!!)
             holder.itemView.findNavController().navigate(action)
+
+            //  holder.binding.root.findNavController()
         }
 
 

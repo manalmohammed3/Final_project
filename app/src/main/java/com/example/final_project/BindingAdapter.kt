@@ -19,9 +19,6 @@ fun bindRecyclerView(recyclerView: RecyclerView,
     adapter.submitList(data)
 }
 
-
-
-
 @BindingAdapter("photoUrl")
 fun ImageView.bind(photoUrl: String?) {
     Log.e("tag", "Starthere ${photoUrl}")

@@ -25,7 +25,6 @@
             android:layout_height="wrap_content">
 
 
-
             <ImageView
                 android:id="@+id/cityImage"
                 android:layout_width="match_parent"
@@ -41,23 +40,67 @@
                 android:layout_below="@+id/cityImage"
                 android:layout_marginTop="10dp"
                 android:fontFamily="amita"
+                android:padding="7dp"
+                android:foregroundGravity="left"
+                android:text="@{viewModel.cityDetails.information}"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/cityDetail1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cityDetail"
+                android:layout_marginTop="10dp"
+                android:fontFamily="amita"
+                android:foregroundGravity="left"
                 android:gravity="center"
                 android:padding="7dp"
-                android:text="@{viewModel.cityDetails.information}"
+                android:text="@{viewModel.cityDetails.weather}"
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/cityDetail"
+                android:id="@+id/cityDetail2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/cityImage"
+                android:layout_below="@+id/cityDetail1"
                 android:layout_marginTop="10dp"
                 android:fontFamily="amita"
                 android:gravity="center"
                 android:padding="7dp"
-                android:text="@{viewModel.cityDetails.information}"
+                android:foregroundGravity="left"
+                android:text="@{viewModel.cityDetails.timeZone}"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cityDetail3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cityDetail2"
+                android:layout_marginTop="10dp"
+                android:fontFamily="amita"
+                android:foregroundGravity="left"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="@{viewModel.cityDetails.currency}"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/cityDetail4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cityDetail3"
+                android:layout_marginTop="10dp"
+                android:fontFamily="amita"
+                android:gravity="center"
+                android:padding="7dp"
+                android:foregroundGravity="left"
+                android:text="@{viewModel.cityDetails.population}"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+
 
         </RelativeLayout>
 
