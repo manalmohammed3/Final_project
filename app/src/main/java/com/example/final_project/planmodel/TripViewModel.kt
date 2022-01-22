@@ -34,7 +34,7 @@ class TripViewModel: ViewModel() {
 
     var isComplete = MutableLiveData<Boolean>()
 
-    // this function will calling from AddTaskFragment to add new Task to List
+    // this function will calling from planFragment to add Task to List
     fun addTaskToList() {
         isDatePast(dueDate.value!!)
         var info = Trip(
@@ -45,10 +45,9 @@ class TripViewModel: ViewModel() {
             isComplete.value!!,
             _isPast.value!!
         )
-       // allTask.add(info)
     }
 
-    // this function calling to get empty fields for adding new Task
+    // this function calling to get empty fields for adding new plan
     fun getEmptyFields() {
         title.value = ""
         description.value = ""
@@ -58,7 +57,7 @@ class TripViewModel: ViewModel() {
         _isPast.value = false
     }
 
-    // this function calling to show details for specific Task based on the index in List
+    // this function calling to show details for specific plan based on the index in List
     fun displayInformation() {
 
         val item = allPlans[_currentTaskPosition.value!!]
@@ -81,13 +80,13 @@ class TripViewModel: ViewModel() {
         isDatePast(item.dueDate)
     }
 
-    // remove task based on specific index
+    // remove plan based on specific index
     fun removeTask() {
         allPlans.removeAt(_currentTaskPosition.value!!)
 
     }
 
-    // update the task details in list
+    // update the plan details in list
     fun updatedTripInfo() {
         isDatePast(dueDate.value!!)
         var info = Trip(

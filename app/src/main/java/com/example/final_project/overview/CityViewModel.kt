@@ -4,12 +4,9 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.final_project.data.CitiesItem
-import com.example.final_project.network.cityApi
 import com.google.firebase.database.*
-import kotlinx.coroutines.launch
-import java.lang.Exception
+
 
 
 var gener = 0
@@ -17,7 +14,7 @@ var gener = 0
 enum class cityApiStatus { LOADING, ERROR, DONE }
 class CityViewModel : ViewModel() {
 
-    //remm.secon.fragment
+    //view the planing fragment
     private val _cityDetails = MutableLiveData<CitiesItem>()
     val cityDetails: LiveData<CitiesItem> = _cityDetails
 
@@ -26,14 +23,7 @@ class CityViewModel : ViewModel() {
     private val _status = MutableLiveData<cityApiStatus>()
     val status: LiveData<cityApiStatus> = _status
 
-    val cityId = MutableLiveData<Int>()
 
-    val cityTitle = MutableLiveData<String>()
-    val cityDetail = MutableLiveData<String>()
-
-    val cityImage = MutableLiveData<String>()
-
-    var cityGener: MutableList<List<Int>?> = mutableListOf()
 
     private val _cityInfo = MutableLiveData<List<CitiesItem>>()
     val cityInfo: LiveData<List<CitiesItem>?> = _cityInfo
@@ -46,10 +36,7 @@ class CityViewModel : ViewModel() {
     }
 
 
-    //     init {
-//     getCityList()
-//   }
-//
+
     fun getData() {
 
         _status.value = cityApiStatus.LOADING
@@ -79,7 +66,7 @@ class CityViewModel : ViewModel() {
     }
 
 
-    //reem second fragment
+    //view  second fragment
     fun getCitydetail(id: String) {
         for (city in cityInfo.value!!) {
             if (city.id == id) {

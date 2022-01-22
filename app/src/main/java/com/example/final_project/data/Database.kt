@@ -2,7 +2,7 @@ package com.example.final_project.data
 
 import com.example.final_project.planmodel.Trip
 
-
+//here i stored manully the user data
 object Argument {
         const val INDEX = "itemPosition"
     }

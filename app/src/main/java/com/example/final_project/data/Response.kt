@@ -3,17 +3,13 @@ package com.example.final_project.data
 import com.squareup.moshi.Json
 
 data class Response(
-
 	@Json(name="cities")
 	val cities: List<CitiesItem?>? = null
 )
-
+//class of the data from realtimedata
 data class CitiesItem(
-
 	@Json(name="cityName")
 	val cityName: String? = null,
-
-
 
 	@Json(name="cityImage")
 	val cityImage: String? = null,

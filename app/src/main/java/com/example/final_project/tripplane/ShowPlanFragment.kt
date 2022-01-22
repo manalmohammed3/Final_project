@@ -22,7 +22,7 @@ class ShowPlanFragment : Fragment() {
     private val sharedViewModel: TripViewModel by activityViewModels()
     var taskIndex: Int = 0
 
-    // receive Argument from from ListFragment based on index of task in DatasetList to access task details
+    // receive Argument from from planFragment based on index of task in DatasetList to access task details
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -54,21 +54,21 @@ class ShowPlanFragment : Fragment() {
     }
 
 
-    // when user click on the EDIT ICON, navigate to edit fragment and call function to display his task details
+    // when user click on the EDIT ICON, navigate to edit fragment and call function to display his plan details
     fun goToEditPlanPage() {
-//    val action = ShowTaskFragmentDirections.actionShowTaskFragmentToEditFragment(taskIndex)
+//    val action = ShowplanFragmentDirections.actionShowplanFragmentToEditFragment(planIndex)
         findNavController().navigate(R.id.action_showPlanFragment_to_editPlanFragment)
         sharedViewModel.displayInformation()
 
     }
 
-    // delete task from List
+    // delete plan from List
     fun deleteTask() {
         sharedViewModel.removeTask()
         findNavController().navigate(R.id.action_showPlanFragment_to_planFragment)
     }
 
-    //Dialog to confirm delete task
+    //Dialog to confirm delete plan
     fun showConfirmDeletionDialog() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.dialog_title))
@@ -82,7 +82,7 @@ class ShowPlanFragment : Fragment() {
             .show()
     }
 
-    // show tag if task completed
+    // show tag if plan completed
     fun showIfComplete() {
         sharedViewModel.isComplete.observe(viewLifecycleOwner, {
             if (it) {
@@ -91,7 +91,7 @@ class ShowPlanFragment : Fragment() {
         })
     }
 
-    // show tag if task is past or coming
+    // show tag if plan is past or coming
     fun showIsPast() {
         sharedViewModel.isPast.observe(viewLifecycleOwner, {
 

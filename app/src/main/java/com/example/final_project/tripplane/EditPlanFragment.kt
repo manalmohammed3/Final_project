@@ -56,7 +56,7 @@ class EditPlanFragment : Fragment() {
 
     }
 
-    // if date of task past change text
+    // if date of plant past change text
     fun showIsPast() {
         sharedViewModel.isPast.observe(viewLifecycleOwner, {
 
@@ -86,7 +86,7 @@ class EditPlanFragment : Fragment() {
         findNavController().navigate(R.id.action_editPlanFragment_to_planFragment)
     }
 
-    //Dialog to confirm delete task
+    //Dialog to confirm delete plan
     fun showConfirmDeletionDialog() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.delet_plan))
@@ -100,13 +100,13 @@ class EditPlanFragment : Fragment() {
             .show()
     }
 
-    // after user click delete, the Task will delete from List then user navigate to TaskListFragment
+    // after user click delete, the plan will delete from List then user navigate to planFragment
     fun deleteTask() {
         sharedViewModel.removeTask()
         findNavController().navigate(R.id.action_editPlanFragment_to_planFragment)
     }
 
-    // show date Dialog to add due date for Task, this value is type of  Long so we send it to another function
+    // show date Dialog to add due date for plan, this value is type of  Long so we send it to another function
     fun dateDialog() {
         val builder = MaterialDatePicker.Builder.datePicker()
         val picker = builder.build()

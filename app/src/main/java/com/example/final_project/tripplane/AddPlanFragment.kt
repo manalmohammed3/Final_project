@@ -37,14 +37,14 @@ class AddPlanFragment : Fragment() {
         }
     }
 
-    // add new Task to list
+    // add new plan to list
     fun saveNewTask() {
         sharedViewModel.addTaskToList()
         findNavController().navigate(R.id.action_addPlanFragment_to_planFragment)
 
     }
 
-    // show date Dialog to add due date for Task, this value is type of  Long so we send it to another function
+    // show date Dialog to add due date for plan, this value is type of  Long so we send it to another function
     fun dateDialog() {
         val builder = MaterialDatePicker.Builder.datePicker()
         val picker = builder.build()
